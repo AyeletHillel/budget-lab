@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="conatiner">
+<h1><%= budget.name %></h1>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>From</th>
+        <th>Amount</th>
+        <th>Tags</th>
+    </tr>
+        <tr>
+            <td><%= budget.date %></td>
+            <td><%= budget.from %></td>
+            <td><%= budget.amount %></td>
+            <td><%= budget.tags %></td>
+        </tr>
+</table>
+</div>
+
+</body>
+</html>

@@ -5,12 +5,23 @@ const PORT = process.env.PORT || 3000
 app.use("/static", express.static("Public"))
 const Budget = require("./Models/budget")
 
+// HOME ROUTE
+app.get("/", (req, res) => {
+    res.send("This is working")
+})
+
+// INDEX ROUTE
 app.get("/budgets", (req, res) => {
     res.render("index.ejs", { Budget })
 })
 
-app.get("/", (req, res) => {
-    res.send("This is working")
+//SHOW ROUTE
+app.get("/budgets/:index", (req, res) => {
+    res.render("show.ejs", {
+        index: req.params.index,
+        budget: Budget[req.params.index]
+
+    })
 })
 
 app.listen(PORT, (req, res) => {
