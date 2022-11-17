@@ -15,6 +15,11 @@ app.get("/budgets", (req, res) => {
     res.render("index.ejs", { Budget })
 })
 
+//NEW ROUTE
+app.get("/budgets/new", (req, res) => {
+    res.render("new.ejs")
+})
+
 //SHOW ROUTE
 app.get("/budgets/:index", (req, res) => {
     res.render("show.ejs", {
