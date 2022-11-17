@@ -10,11 +10,14 @@
     <div class="container">
         <h1>Add new budget item</h1>
         <form action="/budgets" method="POST">
-            Date: <input type="text" name="Date"> <br>
-            Name: <input type="text" name="Name"> <br>
-            Amount: <input type="text" name="Amount"> <br>
-            From: <input type="text" name="From"> <br>
-            Date: <input type="text" name="Date"> <br>
+            <input type="text" name="date" placeholder="date">
+            <br>
+            <input type="text" name="name" placeholder="name">
+            <br>
+            <input type="number" name="amount" placeholder="amount">
+            <br>
+            <input type ="text" name="from" placeholder="from">
+            <br>
             <input type="submit" value="Submit">
         </form>
     </div>

@@ -5,6 +5,8 @@ const PORT = process.env.PORT || 3000
 app.use("/static", express.static("Public"))
 const Budget = require("./Models/budget")
 
+app.use(express.urlencoded({extended:true}))
+
 // HOME ROUTE
 app.get("/", (req, res) => {
     res.send("This is working")
@@ -18,6 +20,13 @@ app.get("/budgets", (req, res) => {
 //NEW ROUTE
 app.get("/budgets/new", (req, res) => {
     res.render("new.ejs")
+})
+
+// recieve the data from the form 
+app.post("/budgets", (req, res) => {
+    Budget.push(req.body)
+    console.log(req.body)
+    res.redirect("/budgets/")
 })
 
 //SHOW ROUTE
